@@ -16,12 +16,12 @@ public class MyArrayList<T> {
         ensureCapacity(size + 1);
         elements[size++] = element; //добавление в конец списка
     }
-    public void addWithIndex(int i, T element) {
+    public void add(int i, T element) {
         if (i < 0 || i > size) {
             throw new IndexOutOfBoundsException("Index: " + i + ", Size: " + size);
         }
         ensureCapacity(size + 1);
-        System.arraycopy(elements, i, elements, i + 1, size - 1); //сдвиг элементов после добавления
+        System.arraycopy(elements, i, elements, i + 1, size - i); //сдвиг элементов после добавления
         elements[i] = element; //добавление элемента на позицию i после сдвига элементов
         size++;
     }
@@ -89,7 +89,7 @@ public class MyArrayList<T> {
         return removedElement;
     }
 
-    public boolean remove(Object o) {
+    public boolean removeObj(Object o) {
         for (int i = 0; i < size; i++) {
             if (o.equals(elements[i])) {
                 remove(i);
@@ -100,7 +100,7 @@ public class MyArrayList<T> {
     }
 
     public void sort(Comparator<? super T> comparator) {
-        quickSort(0, size -1, comparator);
+        quickSort(0, size - 1, comparator);
     }
 
     private void quickSort(int low, int high, Comparator<? super T> comparator) {
@@ -116,11 +116,12 @@ public class MyArrayList<T> {
     private int partition(int low, int high, Comparator<? super T> comparator) {
         //разделение массива на две части на основе pivot (опорного элемента)
         T pivot = (T) elements[high]; //опорный элемент - high последний
-        int i = (low - 1); //индекс для меньших элементов (на данный момент нет) - влево
+        int i = low - 1; //индекс для меньших элементов (на данный момент нет) - влево
         for (int j = low; j < high; j++) {
-            if (comparator.compare((T) elements[j], pivot) <= 0); //сравнение с опорным элементом черз компаратор
-            i++; //увеличение индекса для меньших элементов для перемены местами
-            swap(i, j);
+            if (comparator.compare((T) elements[j], pivot) <= 0) { //сравнение с опорным элементом черз компаратор
+                i++; //увеличение индекса для меньших элементов для перемены местами
+                swap(i, j);
+            }
         }
         swap(i + 1, high); //перемещение pivot на его окончательную позицию
         return i + 1;
@@ -136,4 +137,14 @@ public class MyArrayList<T> {
         return size;
     }
 
+    public void print() {
+        System.out.print("[");
+        for (int i = 0; i < size; i++) {
+            System.out.print(elements[i]);
+            if (i < size - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
 }

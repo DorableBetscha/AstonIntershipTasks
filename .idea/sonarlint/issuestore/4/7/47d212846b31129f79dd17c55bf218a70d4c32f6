@@ -1,10 +1,12 @@
 
-‹
-java:S1192"HDefine a constant instead of duplicating this literal "Index: " 3 times.(é¾ÎÊ8£Ò¨Æ2J$63f8684d-a228-40df-a26b-d1faefeddbe2
-Œ
-java:S1192"IDefine a constant instead of duplicating this literal ", Size: " 3 times.(é¾ÎÊ8¤Ò¨Æ2J$4f092b73-4f41-4ebc-b9da-ca8208cab45b
-ƒ	java:S1257"<This block of commented-out lines of code should be removed.(êŒ˜Âúÿÿÿÿ8ªÒ¨Æ2J$50457113-f89b-4f9d-93d1-045156680fa8
-_
-java:S1116y"Remove this empty statement.(ˆ×öÈ8®Ò¨Æ2J$455c4f99-8fc2-40f7-a5ba-fcfa300ec264
-q
-java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8®Ò¨Æ2J$4bd28d4a-8f65-4910-bfd4-44400962f5e3
+e
+java:S1192"HDefine a constant instead of duplicating this literal "Index: " 3 times.(é¾ÎÊ8÷°ÎÆ2
+f
+java:S1192"IDefine a constant instead of duplicating this literal ", Size: " 3 times.(é¾ÎÊ8÷°ÎÆ2
+]	java:S1257"<This block of commented-out lines of code should be removed.(êŒ˜Âúÿÿÿÿ8ü°ÎÆ2
+M	java:S106"+Replace this use of System.out by a logger.(µŸŞ…şÿÿÿÿ8±ÎÆ2
+M	java:S106"+Replace this use of System.out by a logger.(äüôøøÿÿÿÿ8±ÎÆ2
+M	java:S106‘"+Replace this use of System.out by a logger.(Ø–ªùÿÿÿÿ8±ÎÆ2
+H	java:S106”"+Replace this use of System.out by a logger.(Û®÷â8±ÎÆ2
+K
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8±ÎÆ2
