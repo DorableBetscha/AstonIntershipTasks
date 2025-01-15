@@ -36,6 +36,7 @@ public class MyArrayListTest {
         assertEquals(Integer.valueOf(4), list.get(3));
         assertEquals(Integer.valueOf(5), list.get(0));
         assertEquals(Integer.valueOf(1), list.get(1));
+        list.print();
     }
 
     @Test
@@ -46,12 +47,14 @@ public class MyArrayListTest {
         }
         list.addAll(testList);
         assertEquals(Integer.valueOf(13), list.size());
+        list.print();
     }
 
     @Test
     public void testClear() {
         list.clear();
         assertEquals(list.isEmpty(), true);
+        list.print();
     }
 
     @Test
@@ -60,12 +63,14 @@ public class MyArrayListTest {
         assertEquals(Integer.valueOf(1), list.get(0));
         assertEquals(Integer.valueOf(3), list.get(1));
         assertEquals(Integer.valueOf(2), list.size());
+        list.print();
     }
 
     @Test
     public void testRemoveObject() {
         list.removeObj(3);
         assertEquals(Integer.valueOf(2), list.size());
+        list.print();
     }
 
     @Test
@@ -77,6 +82,5 @@ public class MyArrayListTest {
 
         list.sort(Comparator.naturalOrder());
         list.print();
-
     }
 }
