@@ -90,6 +90,9 @@ public class MyArrayList<T> {
     }
 
     public boolean removeObj(Object o) {
+        if (o.equals(null)) {
+            throw new NullPointerException("Object is empty");
+        }
         for (int i = 0; i < size; i++) {
             if (o.equals(elements[i])) {
                 remove(i);
