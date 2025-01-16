@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-
-
-
 public class MyArrayListTest {
     MyArrayList<Integer> list = new MyArrayList<>();
 
