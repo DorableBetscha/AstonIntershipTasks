@@ -1,16 +1,17 @@
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
 
 public class MyArrayListTest {
     MyArrayList<Integer> list = new MyArrayList<>();
 
-    @Before
+    @BeforeEach
     public void setUp(){
         list = new MyArrayList<>();
         list.add(1);
