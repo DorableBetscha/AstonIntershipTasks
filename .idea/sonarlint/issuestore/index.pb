@@ -16,3 +16,15 @@ E
 HibernateTask/pom.xml,c\9\c99599272df2ce5e4c62d22c4774f8af2ff5b1cb
 m
 =HibernateTask/src/main/java/com/myproject/myapp/Entities.java,7\6\7691901300505e5558f4f9fed562a445fe901234
+n
+>HibernateTask/src/main/java/com/myproject/myapp/CatEntity.java,d\4\d4841f832839d40c88bf8b976c1229b63b7aa3d3
+o
+?HibernateTask/src/main/java/com/myproject/myapp/BaseEntity.java,a\4\a4df3fc2cc4ce9139500740cf176414d94c5f059
+p
+@HibernateTask/src/main/java/com/myproject/myapp/OwnerEntity.java,0\9\09580a845267ad4ac556a0dbe6b353f0da73e448
+j
+:HibernateTask/src/main/java/com/myproject/myapp/Owner.java,2\4\247391dbe852b244e1e8ecd1b0fb96be41c32d12
+h
+8HibernateTask/src/main/java/com/myproject/myapp/Cat.java,8\2\828cc633c56c7bb9392cc62f83e9c2e3f1cff746
+q
+AHibernateTask/src/main/java/com/myproject/myapp/Veterinarian.java,6\b\6bc354ffae61e45135905f16c9280d7bfd86dd34

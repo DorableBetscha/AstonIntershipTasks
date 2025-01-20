@@ -25,55 +25,48 @@
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>5.6.10.Final</version> <!-- Убедитесь, что используете актуальную версию -->
+      <version>5.6.10.Final</version>
     </dependency>
 
-    <!-- Зависимость для JDBC (например, для MySQL) -->
+    <!-- Зависимость для JDBC (для MySQL) -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.28</version> <!-- Убедитесь, что используете актуальную версию -->
+      <version>8.0.30</version>
     </dependency>
 
-    <!-- Зависимость для Hibernate Validator (если нужно) -->
+    <!-- Зависимость для Hibernate Validator -->
     <dependency>
       <groupId>org.hibernate.validator</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>6.2.0.Final</version> <!-- Убедитесь, что используете актуальную версию -->
+      <version>6.2.0.Final</version>
     </dependency>
 
     <!-- Зависимость для JPA -->
     <dependency>
       <groupId>javax.persistence</groupId>
       <artifactId>javax.persistence-api</artifactId>
-      <version>2.2</version> <!-- Убедитесь, что используете актуальную версию -->
+      <version>2.2</version>
     </dependency>
 
     <!-- Зависимость для логирования (например, SLF4J) -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.7.30</version> <!-- Убедитесь, что используете актуальную версию -->
+      <version>1.7.30</version>
     </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>1.7.30</version> <!-- Убедитесь, что используете актуальную версию -->
+      <version>1.7.30</version>
     </dependency>
 
-    <!-- Зависимость для Flyway (если используете) -->
-    <dependency>
-      <groupId>org.flywaydb</groupId>
-      <artifactId>flyway-core</artifactId>
-      <version>8.0.0</version> <!-- Убедитесь, что используете актуальную версию -->
-    </dependency>
-
-    <!-- Зависимость для Liquibase (если используете) -->
+    <!-- Зависимость для Liquibase -->
     <dependency>
       <groupId>org.liquibase</groupId>
       <artifactId>liquibase-core</artifactId>
-      <version>4.8.0</version> <!-- Убедитесь, что используете актуальную версию -->
+      <version>4.8.0</version>
     </dependency>
 
   </dependencies>
