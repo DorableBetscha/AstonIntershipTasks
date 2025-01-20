@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@DiscriminatorValue("Owner")
 public class Owner extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

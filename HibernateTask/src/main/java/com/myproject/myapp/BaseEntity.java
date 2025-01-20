@@ -3,7 +3,8 @@ package com.myproject.myapp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@MappedSuperclass
+@Inheritance(strategy = InheritanceType.JOINED) //как будет происходить наследование - будут храниться в разных таблицах
+@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING) //столбец для различения сущностей в таблице (название, тип)
 public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

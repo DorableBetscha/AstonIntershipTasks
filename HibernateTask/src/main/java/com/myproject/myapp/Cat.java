@@ -6,6 +6,7 @@ import java.util.Set;
 
 
 @Entity
+@DiscriminatorValue("Cat")
 public class Cat extends BaseEntity {
     @Id //поле является первичным ключом сущности
     @GeneratedValue(strategy = GenerationType.IDENTITY) //будет автоматически генерироваться БД, уникальные значения

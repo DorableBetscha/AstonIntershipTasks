@@ -5,13 +5,19 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@DiscriminatorValue("Veterinarian")
 public class Veterinarian extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
 
-    @ManyToMany(mappedBy = "veterinarians")
+    @ManyToMany
+    @JoinTable(
+            name = "Cat_Veterinarian",
+            joinColumns = @JoinColumn(name = "veterinarian_id"),
+            inverseJoinColumns = @JoinColumn(name = "cat_id")
+    )
     private Set<Cat> cats = new HashSet<>();
 
     public String getName() {
