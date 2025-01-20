@@ -1,4 +1,7 @@
 
-r	java:S106="+Replace this use of System.out by a logger.(¸Â‹ôúÿÿÿÿ8š‡ñ È2J$12c52712-9487-4f7c-a7ae-82f23980691c
-r	java:S106?"+Replace this use of System.out by a logger.(ËÑè»ùÿÿÿÿ8›‡ñ È2J$31f1f479-080a-4121-af7b-ac71884f8ad1
-m	java:S106A"+Replace this use of System.out by a logger.(ú¹ä§8›‡ñ È2J$00cab566-91fa-4663-b603-bb909ef6d719
+L	java:S106P"+Replace this use of System.out by a logger.(Ö‡òÿÿÿÿÿ8ÏØİ¥È2
+L	java:S106S"+Replace this use of System.out by a logger.(ê»Äşşÿÿÿÿ8ĞØİ¥È2
+G	java:S106T"+Replace this use of System.out by a logger.(ğııÙ8ĞØİ¥È2
+L	java:S106V"+Replace this use of System.out by a logger.(ªş›Ëÿÿÿÿÿ8ÑØİ¥È2
+~
+java:S1128"6Remove this unused import 'org.hibernate.query.Query'.(¤— ´ûÿÿÿÿ8úšø¤È2J$ec7e4f91-372e-4337-8b02-40ceeb2df328

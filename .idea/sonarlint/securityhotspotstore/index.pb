@@ -32,3 +32,5 @@ r
 BHibernateTask/src/main/java/com/myproject/myapp/HibarnateUtil.java,2\1\21ba39b806205939b5d94bebf0d55ef3c74e0e14
 r
 BHibernateTask/src/main/java/com/myproject/myapp/HibernateUtil.java,9\3\9371984b8c4498b69cb1e9ee50740a89867df6e1
+y
+IHibernateTask/src/test/java/com/myproject/tests/EntityesCreationTest.java,2\6\262841612562064d8fc35182552392d76672434b

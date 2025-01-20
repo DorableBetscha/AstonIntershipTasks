@@ -26,4 +26,8 @@ public class BaseEntity {
     protected void onUpdate() {
         updatedAt = LocalDateTime.now();
     }
+
+    public Long getId() {
+        return id;
+    }
 }
