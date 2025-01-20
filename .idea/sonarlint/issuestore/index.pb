@@ -8,3 +8,11 @@ H
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+T
+$src/CustomArrayList/MyArrayList.java,d\3\d337978008da5dd82d730986b6502c3a84e6d0db
+X
+(src/CustomArrayList/MyArrayListTest.java,4\2\42d5e80587fca63947137b5387aa5359d9ee5040
+E
+HibernateTask/pom.xml,c\9\c99599272df2ce5e4c62d22c4774f8af2ff5b1cb
+m
+=HibernateTask/src/main/java/com/myproject/myapp/Entities.java,7\6\7691901300505e5558f4f9fed562a445fe901234

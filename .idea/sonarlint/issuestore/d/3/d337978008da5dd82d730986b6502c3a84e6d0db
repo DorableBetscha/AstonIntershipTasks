@@ -1,0 +1,17 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(†ÍÇ“ûÿÿÿÿ8»ÍåñÇ2
+‡
+java:S2583_"DChange this condition so that it does not always evaluate to "false"(©³”•8êŠÿÆ2J$ed7d5eea-c2cc-4e95-9d79-a67fffc71bd2
+‹
+java:S1192"HDefine a constant instead of duplicating this literal "Index: " 3 times.(é¾ÎÊ8êŠÿÆ2J$de60abcb-d15a-4166-b0a6-6e92541cd72e
+Œ
+java:S1192"IDefine a constant instead of duplicating this literal ", Size: " 3 times.(é¾ÎÊ8êŠÿÆ2J$b14f7cc6-2be9-46c6-8e70-088d34af3d5f
+ƒ	java:S1259"<This block of commented-out lines of code should be removed.(êŒ˜Âúÿÿÿÿ8”êŠÿÆ2J$c89704b0-ec91-40bf-ac8c-564184fcbd57
+½
+java:S2159_"zRemove this call to "equals"; comparisons against null always return false; consider using '== null' to check for nullity.(©³”•8—êŠÿÆ2J$b8b42f7f-69c7-412b-95da-c8f69eb69424
+s	java:S106’"+Replace this use of System.out by a logger.(µŸŞ…şÿÿÿÿ8›êŠÿÆ2J$b66c5ac5-da1e-49b8-b846-98964b4b04d8
+s	java:S106”"+Replace this use of System.out by a logger.(äüôøøÿÿÿÿ8›êŠÿÆ2J$a8fa9c65-b2a1-43e4-8a5e-01fc5b5b322d
+s	java:S106–"+Replace this use of System.out by a logger.(Ø–ªùÿÿÿÿ8›êŠÿÆ2J$e397e3ec-3cf7-483c-a506-d39a590c94ae
+n	java:S106™"+Replace this use of System.out by a logger.(Û®÷â8œêŠÿÆ2J$88095464-3f27-47bd-936d-18cac10a5b68
+q
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8œêŠÿÆ2J$199dfd57-2c12-4636-aae4-d6683e9b5f8f
