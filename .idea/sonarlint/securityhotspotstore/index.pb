@@ -1,8 +1,4 @@
 
-D
-src/MyArrayList.java,4\7\47d212846b31129f79dd17c55bf218a70d4c32f6
-H
-src/MyArrayListTest.java,9\5\9588be6bda166ba5c99be118bbd0e251f6a2aee3
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -14,14 +10,8 @@ X
 (src/CustomArrayList/MyArrayListTest.java,4\2\42d5e80587fca63947137b5387aa5359d9ee5040
 E
 HibernateTask/pom.xml,c\9\c99599272df2ce5e4c62d22c4774f8af2ff5b1cb
-m
-=HibernateTask/src/main/java/com/myproject/myapp/Entities.java,7\6\7691901300505e5558f4f9fed562a445fe901234
-n
->HibernateTask/src/main/java/com/myproject/myapp/CatEntity.java,d\4\d4841f832839d40c88bf8b976c1229b63b7aa3d3
 o
 ?HibernateTask/src/main/java/com/myproject/myapp/BaseEntity.java,a\4\a4df3fc2cc4ce9139500740cf176414d94c5f059
-p
-@HibernateTask/src/main/java/com/myproject/myapp/OwnerEntity.java,0\9\09580a845267ad4ac556a0dbe6b353f0da73e448
 j
 :HibernateTask/src/main/java/com/myproject/myapp/Owner.java,2\4\247391dbe852b244e1e8ecd1b0fb96be41c32d12
 h
@@ -29,8 +19,12 @@ h
 q
 AHibernateTask/src/main/java/com/myproject/myapp/Veterinarian.java,6\b\6bc354ffae61e45135905f16c9280d7bfd86dd34
 r
-BHibernateTask/src/main/java/com/myproject/myapp/HibarnateUtil.java,2\1\21ba39b806205939b5d94bebf0d55ef3c74e0e14
-r
 BHibernateTask/src/main/java/com/myproject/myapp/HibernateUtil.java,9\3\9371984b8c4498b69cb1e9ee50740a89867df6e1
-y
-IHibernateTask/src/test/java/com/myproject/tests/EntityesCreationTest.java,2\6\262841612562064d8fc35182552392d76672434b
+i
+9HibernateTask/src/main/java/com/myproject/myapp/Main.java,2\3\238b1e530f9c14ec86abd3e36605c032ba204714
+d
+4HibernateTask/src/test/java/org/example/AppTest.java,a\0\a0e87e31e79f4ff43b893bb7414131a9de32a827
+o
+?HibernateTask/src/test/java/org/example/HibernateTaskTests.java,d\8\d888c84cfd2c3419b9863fbb5928df2a7575e864
+`
+0HibernateTask/src/main/java/org/example/App.java,5\9\59649e483af02817adbf5c4f80c6841b1c0c7dcf

@@ -14,7 +14,7 @@ public class Cat extends BaseEntity {
     private String name;
 
     //многие к одному - несколько котов могут принадлежать одному владельцу
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "owner_id")
     private Owner owner; //owner будет связан с колонкой "owner_id" в БД
 

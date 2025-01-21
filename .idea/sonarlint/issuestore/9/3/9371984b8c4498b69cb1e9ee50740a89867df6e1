@@ -1,7 +1,21 @@
 
-L	java:S106P"+Replace this use of System.out by a logger.(Ö‡òÿÿÿÿÿ8ÏØİ¥È2
-L	java:S106S"+Replace this use of System.out by a logger.(ê»Äşşÿÿÿÿ8ĞØİ¥È2
-G	java:S106T"+Replace this use of System.out by a logger.(ğııÙ8ĞØİ¥È2
-L	java:S106V"+Replace this use of System.out by a logger.(ªş›Ëÿÿÿÿÿ8ÑØİ¥È2
+Š
+java:S2094"BRemove this empty class, write its code or make it an "interface".(‡Œïøşÿÿÿÿ8á–ñÇÈ2J$966c3754-a33e-4da2-9ab4-985e38a58b13
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(õ–ôÄùÿÿÿÿ8ç–ñÇÈ2J$6f13e61a-35f9-4a20-b391-3925202802c3
+z
+java:S1128"2Remove this unused import 'org.hibernate.Session'.(È¹›§ùÿÿÿÿ8ç–ñÇÈ2J$6b060460-cd23-4962-81b6-afc135bc9441
+
+java:S1128"9Remove this unused import 'org.hibernate.SessionFactory'.(ñ¦«¬şÿÿÿÿ8ç–ñÇÈ2J$80a37e3e-657e-4d09-a4bd-b9916508f5ed
+y
+java:S1128"6Remove this unused import 'org.hibernate.Transaction'.(ìÌè³8ç–ñÇÈ2J$0b489b9a-0a8e-4a9e-8bb9-a335f31d3c64
+
+java:S1128"<Remove this unused import 'org.hibernate.cfg.Configuration'.(ö¬ä8ç–ñÇÈ2J$3f4468a5-a862-4303-b594-12e8f6a4f35d
 ~
-java:S1128"6Remove this unused import 'org.hibernate.query.Query'.(¤— ´ûÿÿÿÿ8úšø¤È2J$ec7e4f91-372e-4337-8b02-40ceeb2df328
+java:S1128"6Remove this unused import 'org.hibernate.query.Query'.(¤— ´ûÿÿÿÿ8ç–ñÇÈ2J$442e79a7-a4c1-4102-a8b6-392e274c863e
+p
+java:S1128	".Remove this unused import 'java.util.HashSet'.(Ê‚êX8ç–ñÇÈ2J$32aa87a2-3976-4d11-8ff5-4ad7388758fd
+s
+java:S1128
+"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8è–ñÇÈ2J$e9228ccb-844a-46d5-b66d-830b8ff537b7
+r
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8è–ñÇÈ2J$d8f87095-2ec2-4bed-99b6-06686c67b1a6
