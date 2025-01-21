@@ -12,12 +12,7 @@ public class Veterinarian extends BaseEntity {
     private long id;
     private String name;
 
-    @ManyToMany
-    @JoinTable(
-            name = "Cat_Veterinarian",
-            joinColumns = @JoinColumn(name = "veterinarian_id"),
-            inverseJoinColumns = @JoinColumn(name = "cat_id")
-    )
+    @ManyToMany(mappedBy = "veterinarians")
     private Set<Cat> cats = new HashSet<>();
 
     public String getName() {

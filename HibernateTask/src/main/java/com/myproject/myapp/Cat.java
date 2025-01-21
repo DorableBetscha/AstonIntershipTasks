@@ -10,7 +10,7 @@ import java.util.Set;
 public class Cat extends BaseEntity {
     @Id //поле является первичным ключом сущности
     @GeneratedValue(strategy = GenerationType.IDENTITY) //будет автоматически генерироваться БД, уникальные значения
-    private long id;
+    private Long id;
     private String name;
 
     //многие к одному - несколько котов могут принадлежать одному владельцу

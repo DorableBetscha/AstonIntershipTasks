@@ -1,4 +1,5 @@
 package org.example;
+
 import com.myproject.myapp.BaseEntity;
 import com.myproject.myapp.Cat;
 import com.myproject.myapp.Owner;
@@ -7,7 +8,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.junit.jupiter.api.*;
+
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) //тестовый класс будет создан один раз для всех тестов
@@ -149,4 +152,90 @@ public class HibernateTaskTests {
             assertEquals("Dr.Black", cats.get(0).getVeterinarians().iterator().next().getName());
         }
     }
+
+    @Test
+    void testLazyInitializationException() {
+        try (Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Owner owner = new Owner();
+            owner.setName("Mark");
+
+            Cat cat = new Cat();
+            cat.setName("Fluffy");
+            cat.setOwner(owner);
+
+            session.persist(cat);
+            session.persist(owner);
+
+            session.getTransaction().commit();
+        }
+
+        /* ошибка
+        Owner owner = sessionFactory.openSession()
+                .createQuery("FROM OWNER", Owner.class)
+                .setMaxResults(1)
+                .uniqueResult();
+
+        */
+        try (Session session = sessionFactory.openSession()) {
+            Owner owner = session.createQuery(
+                            "SELECT o FROM Owner o JOIN FETCH o.cats WHERE o.name = :name", Owner.class)
+                    .setParameter("name", "Mark")
+                    .uniqueResult();
+            System.out.println(owner.getCats().size());
+        }
+    }
+
+    @Test
+    void testNPlusOneProblem() {
+        try (Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            Owner owner1 = new Owner();
+            owner1.setName("John Doe");
+
+            Owner owner2 = new Owner();
+            owner2.setName("Jane Doe");
+
+            Cat cat1 = new Cat();
+            cat1.setName("Fluffy");
+            cat1.setOwner(owner1);
+
+            Cat cat2 = new Cat();
+            cat2.setName("Mittens");
+            cat2.setOwner(owner1);
+
+            Cat cat3 = new Cat();
+            cat3.setName("Shadow");
+            cat3.setOwner(owner2);
+
+            session.persist(owner1);
+            session.persist(owner2);
+            session.persist(cat1);
+            session.persist(cat2);
+            session.persist(cat3);
+
+            session.getTransaction().commit();
+        }
+
+        /* ошибка
+        try (Session session = sessionFactory.openSession()) {
+            List<Owner> owners = session.createQuery("FROM Owner", Owner.class).list();
+
+            for (Owner owner : owners) {
+                System.out.println(owner.getName() + "'s Cats: " + owner.getCats().size());
+            }
+        }
+        */
+
+        try(Session session = sessionFactory.openSession()) {
+            List<Owner> owners = session.createQuery("SELECT DISTINCT o FROM Owner o JOIN FETCH o.cats", Owner.class)
+                    .list();
+            for (Owner owner : owners) {
+                System.out.println(owner.getName() + " " + owner.getCats().size());
+            }
+        }
+    }
+
 }

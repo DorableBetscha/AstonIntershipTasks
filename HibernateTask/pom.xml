@@ -56,19 +56,19 @@
       <version>1.7.30</version>
     </dependency>
 
-
     <dependency>
       <groupId>com.mchange</groupId>
       <artifactId>c3p0</artifactId>
       <version>0.9.5.5</version>
     </dependency>
 
-    <!-- Зависимость для Liquibase -->
     <dependency>
-      <groupId>org.liquibase</groupId>
-      <artifactId>liquibase-core</artifactId>
-      <version>4.8.0</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.11.4</version>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>
+
 </project>
