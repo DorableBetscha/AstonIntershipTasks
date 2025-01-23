@@ -1,6 +1,7 @@
 package com.myproject.myapp;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.util.List;
@@ -15,14 +16,15 @@ public class Main {
                 .addAnnotatedClass(Veterinarian.class)
                 .buildSessionFactory();
 
-        try (Session session = sessionFactory.openSession()) {
+        Session session = null;
+
+        try {
+            session = sessionFactory.openSession();
             session.beginTransaction();
 
-            // Очистка таблиц
-            clearDatabase(session);
-            session.clear();
+            clearDatabase(session); // очистка таблиц для повторного запуска при тестировании
 
-            // Создание объектов
+
             Owner owner1 = new Owner();
             owner1.setName("Alice");
 
@@ -61,11 +63,11 @@ public class Main {
             owner2.getCats().add(cat3);
 
             // Сохранение объектов в БД
+            session.save(owner1);
+            session.save(owner2);
             session.save(cat1);
             session.save(cat2);
             session.save(cat3);
-            session.save(owner1);
-            session.save(owner2);
             session.save(vet1);
             session.save(vet2);
 
@@ -75,20 +77,37 @@ public class Main {
             session.beginTransaction();
 
             List<BaseEntity> allEntities = session.createQuery("FROM BaseEntity", BaseEntity.class).getResultList();
-            System.out.println("=== All Entities ===");
+            System.out.println("All Entities:");
             for (BaseEntity entity : allEntities) {
-                if (entity instanceof Cat) {
-                    System.out.println("Cat: " + ((Cat) entity).getName());
-                } else if (entity instanceof Owner) {
-                    System.out.println("Owner: " + ((Owner) entity).getName());
-                } else if (entity instanceof Veterinarian) {
-                    System.out.println("Veterinarian: " + ((Veterinarian) entity).getName());
+                String entityType = entity.getClass().getSimpleName();
+                switch (entityType) {
+                    case "Cat":
+                        String catName = ((Cat) entity).getName();
+                        if (catName != null) {
+                            System.out.printf("Cat: %s%n", catName);
+                        }
+                        break;
+                    case "Owner":
+                        String ownerName = ((Owner) entity).getName();
+                        if (ownerName != null) {
+                            System.out.printf("Owner: %s%n", ownerName);
+                        }
+                        break;
+                    case "Veterinarian":
+                        String vetName = ((Veterinarian) entity).getName();
+                        if (vetName != null) {
+                            System.out.printf("Veterinarian: %s%n", vetName);
+                        }
+                        break;
+                    default:
+                        System.out.println("Unknown entity type");
+                        break;
                 }
             }
 
-            // Запрос для проверки связей владельцев и котов
+            // запрос для проверки связей владельцев и котов
             List<Owner> owners = session.createQuery("FROM Owner", Owner.class).getResultList();
-            System.out.println("=== Owners and their Cats ===");
+            System.out.println("Owners and their Cats: ");
             for (Owner owner : owners) {
                 System.out.println("Owner: " + owner.getName());
                 owner.getCats().forEach(cat -> System.out.println("  Cat: " + cat.getName()));
@@ -97,18 +116,34 @@ public class Main {
             session.getTransaction().commit();
 
         } catch (Exception e) {
+            if (session != null && session.getTransaction() != null) {
+                session.getTransaction().rollback(); // откат транзакции в случае ошибки
+            }
             e.printStackTrace();
         } finally {
-            sessionFactory.close();
+            if (session != null) {
+                session.close();
+            }
         }
     }
 
-    private static void clearDatabase(Session session) {
-        session.createNativeQuery("DELETE FROM cat_veterinarian").executeUpdate();
-        session.createNativeQuery("DELETE FROM Cat").executeUpdate();
-        session.createNativeQuery("DELETE FROM Veterinarian").executeUpdate();
-        session.createNativeQuery("DELETE FROM Owner").executeUpdate();
-        session.createNativeQuery("ALTER TABLE cat_veterinarian AUTO_INCREMENT = 1").executeUpdate();
-        session.getTransaction().commit();
+    public static void clearDatabase(Session session) {
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+
+            // Очистка таблиц
+            session.createNativeQuery("DELETE FROM TABLE cat_veterinarian").executeUpdate();
+            session.createNativeQuery("DELETE FROM TABLE Cat").executeUpdate();
+            session.createNativeQuery("DELETE FROM TABLE Owner").executeUpdate();
+            session.createNativeQuery("DELETE FROM TABLE Veterinarian").executeUpdate();
+
+            transaction.commit(); // завершение транзакции
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback(); // откат транзакции в случае ошибки
+            }
+            e.printStackTrace();
+        }
     }
 }

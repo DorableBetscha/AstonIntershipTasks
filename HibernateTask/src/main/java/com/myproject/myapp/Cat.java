@@ -26,6 +26,8 @@ public class Cat extends BaseEntity {
     )
     private Set<Veterinarian> veterinarians = new HashSet<>(); //коллекция ветеринаров без дубликатов
 
+    public Cat() {}
+
     public Long getId() {
         return id;
     }

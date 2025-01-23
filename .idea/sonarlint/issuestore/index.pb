@@ -18,12 +18,8 @@ h
 8HibernateTask/src/main/java/com/myproject/myapp/Cat.java,8\2\828cc633c56c7bb9392cc62f83e9c2e3f1cff746
 q
 AHibernateTask/src/main/java/com/myproject/myapp/Veterinarian.java,6\b\6bc354ffae61e45135905f16c9280d7bfd86dd34
-r
-BHibernateTask/src/main/java/com/myproject/myapp/HibernateUtil.java,9\3\9371984b8c4498b69cb1e9ee50740a89867df6e1
 i
 9HibernateTask/src/main/java/com/myproject/myapp/Main.java,2\3\238b1e530f9c14ec86abd3e36605c032ba204714
-d
-4HibernateTask/src/test/java/org/example/AppTest.java,a\0\a0e87e31e79f4ff43b893bb7414131a9de32a827
 o
 ?HibernateTask/src/test/java/org/example/HibernateTaskTests.java,d\8\d888c84cfd2c3419b9863fbb5928df2a7575e864
 `
