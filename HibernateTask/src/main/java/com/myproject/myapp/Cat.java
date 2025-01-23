@@ -2,6 +2,7 @@ package com.myproject.myapp;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -14,11 +15,11 @@ public class Cat extends BaseEntity {
     private String name;
 
     //многие к одному - несколько котов могут принадлежать одному владельцу
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "owner_id")
     private Owner owner; //owner будет связан с колонкой "owner_id" в БД
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "cat_veterinarian",
             joinColumns = @JoinColumn(name = "cat_id"),
@@ -60,4 +61,21 @@ public class Cat extends BaseEntity {
         this.veterinarians = veterinarians;
     }
 
+    public void addVeterinarian (Veterinarian veterinarian) {
+        this.veterinarians.add(veterinarian);
+        veterinarian.getCats().add(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cat cat = (Cat) o;
+        return Objects.equals(id, cat.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

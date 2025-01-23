@@ -1,12 +1,12 @@
 
 •
 java:S3776
-"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Çµí‘8’²ä™É2J$845f1e9f-7227-4384-a434-eb7a7d97f4aa
-m	java:S106P"+Replace this use of System.out by a logger.(½±ĞŠ8£Æ¬˜É2J$e67066e5-3972-4274-a2d6-ff6b640c19e0
-r	java:S106W"+Replace this use of System.out by a logger.(´Ñ‚·ûÿÿÿÿ8¤Æ¬˜É2J$b5e420fa-39ec-4290-b0bb-c1443d5bef74
-m	java:S106]"+Replace this use of System.out by a logger.(¹«ˆÃ8¥Æ¬˜É2J$37b68666-2b17-4db5-b066-6328fdb76aef
-m	java:S106c"+Replace this use of System.out by a logger.(àÂÂÓ8¦Æ¬˜É2J$c6c3b8ae-2a72-453d-b0c8-08acc9e17f44
-r	java:S106g"+Replace this use of System.out by a logger.(¡Šìûÿÿÿÿ8¨Æ¬˜É2J$3d3425d1-0ff6-4f55-bde8-fda631d0cdf3
-r	java:S106n"+Replace this use of System.out by a logger.(êƒ«ßúÿÿÿÿ8ûÈÖ™É2J$54b2393f-0f92-4665-9d07-3767a3d055e4
-r	java:S106p"+Replace this use of System.out by a logger.(Ÿ·úùÿÿÿÿ8²Úâ™É2J$8e662371-0baa-4673-b99f-e5d48281de4b
-r	java:S106q"+Replace this use of System.out by a logger.(Õñöòûÿÿÿÿ8Ø¦ã™É2J$89209587-38bb-4669-a112-517cc8c4e01d
+"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Çµí‘8Æ¡åšÉ2J$1a736a03-39c7-4781-a5d4-c7222a0219e7
+m	java:S106G"+Replace this use of System.out by a logger.(½±ĞŠ8Ã¢µ›É2J$fff93376-2caa-4d37-aa0c-920513b080a7
+r	java:S106N"+Replace this use of System.out by a logger.(´Ñ‚·ûÿÿÿÿ8Ã¢µ›É2J$7adb6ae7-b0e8-421b-a01a-843e049e3a8f
+m	java:S106T"+Replace this use of System.out by a logger.(¹«ˆÃ8Ã¢µ›É2J$273d4171-79a8-4af0-9191-a49a88120263
+m	java:S106Z"+Replace this use of System.out by a logger.(àÂÂÓ8Ä¢µ›É2J$b4770568-d229-4add-841c-5fd2c4c69ba1
+r	java:S106^"+Replace this use of System.out by a logger.(¡Šìûÿÿÿÿ8Ä¢µ›É2J$3c57a831-0a6d-4d91-96a9-bbaa438b7026
+r	java:S106e"+Replace this use of System.out by a logger.(êƒ«ßúÿÿÿÿ8Ä¢µ›É2J$2cc4ea07-b176-4608-8c34-adb89ed724ea
+r	java:S106g"+Replace this use of System.out by a logger.(Ÿ·úùÿÿÿÿ8Äê›É2J$487a5531-8fce-49ab-9b95-20c098b3af8b
+r	java:S106h"+Replace this use of System.out by a logger.(Õñöòûÿÿÿÿ8Ä¢µ›É2J$bb0311e0-5cf2-4b8d-a122-c3dee6c4b1ef

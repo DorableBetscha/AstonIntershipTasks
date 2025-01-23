@@ -31,6 +31,12 @@ public class Main {
             Owner owner2 = new Owner();
             owner2.setName("Bob");
 
+            Veterinarian vet1 = new Veterinarian();
+            vet1.setName("Dr. Smith");
+
+            Veterinarian vet2 = new Veterinarian();
+            vet2.setName("Dr. Brown");
+
             Cat cat1 = new Cat();
             cat1.setName("Tom");
             cat1.setOwner(owner1);
@@ -43,33 +49,18 @@ public class Main {
             cat3.setName("Shadow");
             cat3.setOwner(owner2);
 
-            Veterinarian vet1 = new Veterinarian();
-            vet1.setName("Dr. Smith");
-
-            Veterinarian vet2 = new Veterinarian();
-            vet2.setName("Dr. Brown");
-
             // Установка связей между котами и ветеринарами
-            cat1.getVeterinarians().add(vet1);
-            cat1.getVeterinarians().add(vet2);
-            cat2.getVeterinarians().add(vet1);
-            vet1.getCats().add(cat1);
-            vet1.getCats().add(cat2);
-            vet2.getCats().add(cat1);
+            owner1.addCat(cat1);
+            owner1.addCat(cat2);
+            owner2.addCat(cat3);
+            cat1.addVeterinarian(vet1);
+            cat1.addVeterinarian(vet2);
+            cat2.addVeterinarian(vet1);
 
-            // Добавление котов владельцам
-            owner1.getCats().add(cat1);
-            owner1.getCats().add(cat2);
-            owner2.getCats().add(cat3);
 
             // Сохранение объектов в БД
-            session.save(owner1);
-            session.save(owner2);
-            session.save(cat1);
-            session.save(cat2);
-            session.save(cat3);
-            session.save(vet1);
-            session.save(vet2);
+            session.merge(owner1);
+            session.merge(owner2);
 
             session.getTransaction().commit();
 

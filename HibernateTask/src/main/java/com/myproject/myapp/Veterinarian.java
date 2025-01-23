@@ -2,6 +2,7 @@ package com.myproject.myapp;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -34,5 +35,18 @@ public class Veterinarian extends BaseEntity {
     }
     public void setCats(Set<Cat> cats) {
         this.cats = cats;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Veterinarian that = (Veterinarian) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
