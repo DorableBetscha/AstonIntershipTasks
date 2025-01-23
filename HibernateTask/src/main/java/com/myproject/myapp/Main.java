@@ -49,7 +49,7 @@ public class Main {
             cat3.setName("Shadow");
             cat3.setOwner(owner2);
 
-            // Установка связей между котами и ветеринарами
+
             owner1.addCat(cat1);
             owner1.addCat(cat2);
             owner2.addCat(cat3);
@@ -58,13 +58,13 @@ public class Main {
             cat2.addVeterinarian(vet1);
 
 
-            // Сохранение объектов в БД
+            // сохранение в БД
             session.merge(owner1);
             session.merge(owner2);
 
             session.getTransaction().commit();
 
-            // Полиморфный запрос к BaseEntity
+            // полиморфный запрос к BaseEntity
             session.beginTransaction();
 
             List<BaseEntity> allEntities = session.createQuery("FROM BaseEntity", BaseEntity.class).getResultList();
@@ -123,7 +123,6 @@ public class Main {
         try {
             transaction = session.beginTransaction();
 
-            // Очистка таблиц
             session.createNativeQuery("DELETE FROM TABLE cat_veterinarian").executeUpdate();
             session.createNativeQuery("DELETE FROM TABLE Cat").executeUpdate();
             session.createNativeQuery("DELETE FROM TABLE Owner").executeUpdate();
