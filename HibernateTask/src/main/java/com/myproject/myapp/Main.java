@@ -22,9 +22,6 @@ public class Main {
             session = sessionFactory.openSession();
             session.beginTransaction();
 
-            clearDatabase(session); // очистка таблиц для повторного запуска при тестировании
-
-
             Owner owner1 = new Owner();
             owner1.setName("Alice");
 
@@ -57,17 +54,16 @@ public class Main {
             cat1.addVeterinarian(vet2);
             cat2.addVeterinarian(vet1);
 
-
             // сохранение в БД
-            session.merge(owner1);
-            session.merge(owner2);
+            session.persist(owner1);
+            session.persist(owner2);
 
             session.getTransaction().commit();
 
             // полиморфный запрос к BaseEntity
             session.beginTransaction();
 
-            List<BaseEntity> allEntities = session.createQuery("FROM BaseEntity", BaseEntity.class).getResultList();
+            List<BaseEntity> allEntities = session.createQuery("from BaseEntity").list();
             System.out.println("All Entities:");
             for (BaseEntity entity : allEntities) {
                 String entityType = entity.getClass().getSimpleName();
@@ -97,7 +93,7 @@ public class Main {
             }
 
             // запрос для проверки связей владельцев и котов
-            List<Owner> owners = session.createQuery("FROM Owner", Owner.class).getResultList();
+            List<Owner> owners = session.createQuery("from Owner").list();
             System.out.println("Owners and their Cats: ");
             for (Owner owner : owners) {
                 System.out.println("Owner: " + owner.getName());
@@ -115,25 +111,6 @@ public class Main {
             if (session != null) {
                 session.close();
             }
-        }
-    }
-
-    public static void clearDatabase(Session session) {
-        Transaction transaction = null;
-        try {
-            transaction = session.beginTransaction();
-
-            session.createNativeQuery("DELETE FROM TABLE cat_veterinarian").executeUpdate();
-            session.createNativeQuery("DELETE FROM TABLE Cat").executeUpdate();
-            session.createNativeQuery("DELETE FROM TABLE Owner").executeUpdate();
-            session.createNativeQuery("DELETE FROM TABLE Veterinarian").executeUpdate();
-
-            transaction.commit(); // завершение транзакции
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback(); // откат транзакции в случае ошибки
-            }
-            e.printStackTrace();
         }
     }
 }

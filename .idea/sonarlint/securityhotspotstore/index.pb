@@ -24,3 +24,5 @@ o
 ?HibernateTask/src/test/java/org/example/HibernateTaskTests.java,d\8\d888c84cfd2c3419b9863fbb5928df2a7575e864
 `
 0HibernateTask/src/main/java/org/example/App.java,5\9\59649e483af02817adbf5c4f80c6841b1c0c7dcf
+p
+@HibernateTask/src/main/java/com/myproject/myapp/IdGenerator.java,3\4\341b65549955c2b7c5617afab589c29dbc97aa2d

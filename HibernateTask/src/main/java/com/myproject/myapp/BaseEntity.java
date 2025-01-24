@@ -5,11 +5,15 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED) //как будет происходить наследование - будут храниться в разных таблицах
-@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING) //столбец для различения сущностей в таблице (название, тип)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "id_gen")
+    @TableGenerator(name = "id_gen",
+            table = "id_generator",
+            pkColumnName = "pk_name", // Название столбца для имени ключа
+            valueColumnName = "pk_value", // Название столбца для значения ключа
+            pkColumnValue = "entity_id")
     private Long id;
 
     @Column(name = "created_at") //@Column - задать имя столбца в БД
@@ -33,16 +37,4 @@ public class BaseEntity {
         return id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        BaseEntity that = (BaseEntity) o;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }

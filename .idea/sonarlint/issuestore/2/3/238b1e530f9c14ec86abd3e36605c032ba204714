@@ -1,12 +1,14 @@
 
 •
 java:S3776
-"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Çµí‘8Æ¡åšÉ2J$204b725b-7e2a-4914-8772-1851c5dfcb98
-m	java:S106G"+Replace this use of System.out by a logger.(½±ĞŠ8Ã¢µ›É2J$7a549381-8a52-4947-94fa-293aa45885f3
-r	java:S106N"+Replace this use of System.out by a logger.(´Ñ‚·ûÿÿÿÿ8Ã¢µ›É2J$75894a09-2dd6-4dbc-ba3a-7af8da629bfc
-m	java:S106T"+Replace this use of System.out by a logger.(¹«ˆÃ8Ã¢µ›É2J$79baf69a-76b4-4172-8d58-081c0c93566d
-m	java:S106Z"+Replace this use of System.out by a logger.(àÂÂÓ8Ä¢µ›É2J$bb209fb7-cda3-4fd6-bd58-3a887d61d735
-r	java:S106^"+Replace this use of System.out by a logger.(¡Šìûÿÿÿÿ8Ä¢µ›É2J$c20cfc11-edd9-4513-81bb-a54e45c1d7b2
-r	java:S106e"+Replace this use of System.out by a logger.(êƒ«ßúÿÿÿÿ8Ä¢µ›É2J$d6eac8b7-755d-464f-a530-d61dbd07fe58
-r	java:S106g"+Replace this use of System.out by a logger.(Ÿ·úùÿÿÿÿ8Äê›É2J$e2d74743-911d-4286-ae6e-ca0d41f6d79d
-r	java:S106h"+Replace this use of System.out by a logger.(Õñöòûÿÿÿÿ8Ä¢µ›É2J$faefff22-2f6c-4198-8d74-6f06b36195da
+"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Çµí‘8Æ¡åšÉ2J$abe3f70e-e247-44c9-a7c6-7f0e912f3db0
+m	java:S106C"+Replace this use of System.out by a logger.(½±ĞŠ8Ã¢µ›É2J$b3e4efe6-580f-4750-9a67-4c1d619ee5a1
+r	java:S106J"+Replace this use of System.out by a logger.(´Ñ‚·ûÿÿÿÿ8Ã¢µ›É2J$3d254e05-2460-471c-a394-17692a7a2ad0
+m	java:S106P"+Replace this use of System.out by a logger.(¹«ˆÃ8Ã¢µ›É2J$de52f4ba-812b-43ee-8ad8-18419a4e3f78
+m	java:S106V"+Replace this use of System.out by a logger.(àÂÂÓ8Ä¢µ›É2J$dbe00c85-1659-4bba-9699-ad40de75e49a
+r	java:S106Z"+Replace this use of System.out by a logger.(¡Šìûÿÿÿÿ8Ä¢µ›É2J$55d9dff8-6f36-4a54-b721-137a73e7e996
+r	java:S106a"+Replace this use of System.out by a logger.(êƒ«ßúÿÿÿÿ8Ä¢µ›É2J$dd260de3-1971-48c6-ba2c-c5a89052d375
+r	java:S106c"+Replace this use of System.out by a logger.(Ÿ·úùÿÿÿÿ8Äê›É2J$8f56b449-8a31-4923-ae0f-e3345285432f
+r	java:S106d"+Replace this use of System.out by a logger.(Õñöòûÿÿÿÿ8Ä¢µ›É2J$a68cbb30-2af8-44b4-8454-21e1f183842b
+y
+java:S1128"6Remove this unused import 'org.hibernate.Transaction'.(ìÌè³8ÛªßÉÉ2J$4d843c60-b063-4d5b-9ec6-e2d549cfaf0d

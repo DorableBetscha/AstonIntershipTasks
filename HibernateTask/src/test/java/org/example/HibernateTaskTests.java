@@ -1,9 +1,7 @@
 package org.example;
 
-import com.myproject.myapp.BaseEntity;
-import com.myproject.myapp.Cat;
-import com.myproject.myapp.Owner;
-import com.myproject.myapp.Veterinarian;
+import com.myproject.myapp.*;
+import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -80,7 +78,7 @@ public class HibernateTaskTests {
 
             session.getTransaction().commit(); //коммит транзакции для сохранения в БД
 
-            List<Cat> cats = session.createQuery("FROM Cat", Cat.class).list();
+            List<Cat> cats = session.createQuery("From Cat").list();
             assertEquals(1, cats.size());
             assertEquals("Pushishka", cats.get(0).getName());
             assertEquals("Mark", cats.get(0).getOwner().getName());
@@ -92,17 +90,19 @@ public class HibernateTaskTests {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
 
+            // Сохраняем объект
             Owner owner = new Owner();
             owner.setName("Mark");
             session.persist(owner);
-
             session.getTransaction().commit();
 
+            // Начинаем новую транзакцию
             session.beginTransaction();
             owner.setName("Alice");
-            session.update(owner);
+            session.merge(owner); // Используем merge вместо update
             session.getTransaction().commit();
 
+            // Проверяем обновление
             Owner updatedOwner = session.createQuery("FROM Owner", Owner.class).uniqueResult();
             assertNotNull(updatedOwner);
             assertEquals("Alice", updatedOwner.getName());
@@ -134,22 +134,28 @@ public class HibernateTaskTests {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
 
+            Owner owner = new Owner();
+            owner.setName("Mark");
+
             Cat cat = new Cat();
             cat.setName("Fluffy");
+            cat.setOwner(owner);
 
             Veterinarian vet = new Veterinarian();
             vet.setName("Dr.Black");
 
             cat.getVeterinarians().add(vet);
 
+            session.persist(owner);
             session.persist(cat);
-            session.persist(vet);
-
             session.getTransaction().commit();
 
             List<Cat> cats = session.createQuery("FROM Cat", Cat.class).list();
             assertEquals(1, cats.size());
+            assertEquals("Fluffy", cats.get(0).getName());
+            assertEquals(1, cats.get(0).getVeterinarians().size());
             assertEquals("Dr.Black", cats.get(0).getVeterinarians().iterator().next().getName());
+            assertEquals("Mark", cats.get(0).getOwner().getName());
         }
     }
 
@@ -165,19 +171,20 @@ public class HibernateTaskTests {
             cat.setName("Fluffy");
             cat.setOwner(owner);
 
-            session.persist(cat);
-            session.persist(owner);
+            owner.getCats().add(cat);
 
+            session.persist(owner);
             session.getTransaction().commit();
         }
 
-        /* ошибка
+         /* ошибка
         Owner owner = sessionFactory.openSession()
                 .createQuery("FROM OWNER", Owner.class)
                 .setMaxResults(1)
                 .uniqueResult();
 
         */
+
         try (Session session = sessionFactory.openSession()) {
             Owner owner = session.createQuery(
                             "SELECT o FROM Owner o JOIN FETCH o.cats WHERE o.name = :name", Owner.class)

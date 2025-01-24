@@ -1,5 +1,8 @@
 
 Ä
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ì‰™å8éì§›É2J$1ea144f4-4993-41f1-8a5c-7db4f352e24e
-‚
-java:S1161 ":Add the "@Override" annotation above this method signature(§ß»éıÿÿÿÿ8ìì§›É2J$2a018e4c-8fe9-4ac0-a802-aec010c8f10f
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ì‰™å8éì§›É2J$b66c9bd9-f007-4d74-beba-f4d8e9d3efdd
+n
+java:S2160
+"+Override the "equals" method in this class.(Æçß»8¹–¶ÆÉ2J$1430fa1f-5edd-4805-9d0a-321790f4280d
+q
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8Ó¸ÆÉ2J$2b5c5cb7-86a7-4f5d-a922-36d05ffbda99

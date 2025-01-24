@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <!-- Таблица id_generator -->
+    <changeSet id="create-id-generator" author="root">
+        <createTable tableName="id_generator">
+            <column name="pk_name" type="VARCHAR(255)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="pk_value" type="BIGINT" defaultValue="1"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Таблицы для сущностей -->
+    <changeSet id="create-cat-table" author="root">
+        <createTable tableName="cat">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-owner-table" author="root">
+        <createTable tableName="owner">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-veterinarian-table" author="root">
+        <createTable tableName="veterinarian">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

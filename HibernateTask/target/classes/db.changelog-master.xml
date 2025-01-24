@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <!-- Очистка данных из таблиц -->
+    <changeSet id="clear-tables" author="root" runAlways="true">
+        <sql>
+            DELETE FROM id_generator;
+            DELETE FROM cat;
+            DELETE FROM owner;
+            DELETE FROM veterinarian;
+        </sql>
+    </changeSet>
+
+    <changeSet id="create-id-generator-table" author="yourname">
+        <createTable tableName="id_generator">
+            <column name="pk_name" type="VARCHAR(255)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="pk_value" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="id_generator">
+            <column name="pk_name" value="entity_id"/>
+            <column name="pk_value" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="create-owner-table" author="yourname">
+        <createTable tableName="owner">
+            <column name="id" type="BIGINT" autoIncrement="false">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-cat-table" author="yourname">
+        <createTable tableName="cat">
+            <column name="id" type="BIGINT" autoIncrement="false">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="owner_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_cat_owner" referencedTableName="owner" referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-veterinarian-table" author="yourname">
+        <createTable tableName="veterinarian">
+            <column name="id" type="BIGINT" autoIncrement="false">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Таблица связи cat_veterinarian -->
+    <changeSet id="create-cat-vet-table" author="yourname">
+        <createTable tableName="cat_veterinarian">
+            <column name="cat_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_cat_vet_cat" referencedTableName="cat" referencedColumnNames="id"/>
+            </column>
+            <column name="veterinarian_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_cat_vet_vet" referencedTableName="veterinarian" referencedColumnNames="id"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey tableName="cat_veterinarian" columnNames="cat_id, veterinarian_id" constraintName="pk_cat_veterinarian"/>
+    </changeSet>
+
+    <!-- Другие изменения схемы -->
+    <include file="db/changelog/schema-creation.xml"/>
+</databaseChangeLog>
