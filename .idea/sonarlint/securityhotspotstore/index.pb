@@ -26,3 +26,5 @@ o
 0HibernateTask/src/main/java/org/example/App.java,5\9\59649e483af02817adbf5c4f80c6841b1c0c7dcf
 p
 @HibernateTask/src/main/java/com/myproject/myapp/IdGenerator.java,3\4\341b65549955c2b7c5617afab589c29dbc97aa2d
+E
+SpringMVCTask/pom.xml,3\f\3fbeaeb8fb8d8e98dc23e27dab6b251918dcc256
