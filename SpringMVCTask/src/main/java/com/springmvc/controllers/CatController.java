@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController //класс является контроллером (обрабатывает HTTP запросы, возвращает JSON/XML), сочетание @Controller и @ResponseBody
+@RestController
+//класс является контроллером (обрабатывает HTTP запросы, возвращает JSON/XML), сочетание @Controller и @ResponseBody
 @RequestMapping("/api/cats") //базовый URL для методов
 public class CatController {
     @Autowired //автоматическое создание экземпляра и внедрение в контроллер
@@ -32,8 +33,6 @@ public class CatController {
                 .map(cat -> ResponseEntity.ok(cat))
                 .orElseThrow(() -> new NotFoundException("Cat not found"));
     }
-
-
     @PutMapping({"/id"})
     public ResponseEntity<Cat> updateCat(@PathVariable Long id, @RequestBody Cat catDetails) {
         return catRepository.findById(id)
@@ -43,5 +42,8 @@ public class CatController {
                     return ResponseEntity.ok(catRepository.save(cat));
                 }).orElseThrow(() -> new NotFoundException("Cat not found"));
     }
-
+    @DeleteMapping({"/id"})
+    public void deleteCat(@PathVariable Long id) {
+        catRepository.deleteById(id);
+    }
 }
